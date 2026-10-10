@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="دردشة نصية عشوائية وبسيطة للتعارف والتحدث باحترام.">
+  <title>Random Meet | دردشة عشوائية</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="logo" aria-hidden="true">💬</div>
+      <div><h1>Random Meet</h1><p>تعرّف على ناس جدد بالدردشة النصية</p></div>
+      <div class="online"><span class="dot"></span><span id="onlineCount">0</span> متصل</div>
+    </header>
+
+    <section id="welcome" class="welcome panel">
+      <div class="hero-icon">👋</div>
+      <h2>جاهز للدردشة؟</h2>
+      <p>اضغط على الزر ونربطوك بشخص متصل عشوائياً.</p>
+      <label class="adult-check"><input id="adultCheck" type="checkbox"> نؤكد أن عمري 18 سنة أو أكثر.</label>
+      <button id="startBtn" class="primary" disabled>ابدأ الدردشة</button>
+      <small>ما تشاركش معلوماتك الشخصية. تقدر تبدّل الشخص أو تحظرو في أي وقت.</small>
+    </section>
+
+    <section id="chat" class="chat panel hidden">
+      <div class="chat-head">
+        <div class="stranger"><span class="avatar">👤</span><div><strong>شخص عشوائي</strong><span id="status">غير متصل</span></div></div>
+        <div class="actions"><button id="reportBtn" class="quiet" title="تبليغ">تبليغ</button><button id="blockBtn" class="quiet danger" title="حظر">حظر</button><button id="nextBtn" class="primary small">شخص آخر ↻</button></div>
+      </div>
+      <div id="messages" class="messages" aria-live="polite"><div class="system-message">أهلاً! خليك محترم وما تشاركش معلوماتك الشخصية.</div></div>
+      <form id="messageForm" class="composer"><input id="messageInput" type="text" maxlength="1000" placeholder="اكتب رسالتك..." autocomplete="off" disabled><button id="sendBtn" class="primary" disabled>إرسال</button></form>
+      <p class="footnote">الدردشة نصية فقط • للاستعمال من طرف البالغين 18+</p>
+    </section>
+    <footer>دردشة عشوائية بسيطة — تعامل باحترام مع الآخرين.</footer>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
